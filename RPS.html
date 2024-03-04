@@ -27,9 +27,30 @@ function playerHand () {
  const computerSelection = getComputerChoice();
 
 function playRound(playerSelection, computerSelection) {
-    
+    console.log("Player Choose: " + playerSelection);
+    console.log("Computer Choose: " + computerSelection);
+
     if (computerSelection == "Rock" && playerSelection == "Rock") {
+        return "It's a tie";
+    } else if (computerSelection== 'Rock' && playerSelection == "Paper") {
+        return "You Win! Paper wins Rock";
+    } else if (computerSelection == "Paper" && playerSelection == "Rock" ) {
+        return "You Lose! Paper wins Rock";
+    } else if (computerSelection == "Paper" && playerSelection == "Paper") {
+        return "It's a tie";
+    } else if (computerSelection == "Scissors" && playerSelection == "Paper") {
+        return "You Lose! Scissors beats Paper";
+    } else if (computerSelection == "Paper" && playerSelection == "Scissors") {
+        return "You Win! Scissors beats Paper";
+    } else if (computerSelection == "Scissors" && playerSelection == "Rock") {
+        return "You Win! Rock beats Scissors";
+    } else if (computerSelection == "Rock" && playerSelection == "Scissors") {
+        return "You Lose! Rock beats Scissors"
+    } else if (computerSelection == "Scissors" && playerSelection == "Scissors") {
         return "It's a tie"
+    }
+    else {
+        return "Check your spelling!"
     }
 }
 
