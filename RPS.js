@@ -69,3 +69,49 @@ function playRound(playerSelection, computerSelection) {
     disableBtns();
 }
 
+
+// playRound(playerSelection, computerSelection);
+const rockBtn = document.createElement('button');
+const paperBtn = document.createElement('button');
+const scissorsBtn = document.createElement('button');
+
+//rock buttons prop.
+rockBtn.textContent = 'Rock';
+rockBtn.addEventListener('click',rockGame);
+
+//paper buttons prop.
+paperBtn.textContent = 'Paper';
+paperBtn.addEventListener('click', paperGame);
+
+//scissors button prop.
+scissorsBtn.textContent = 'Scissors';
+scissorsBtn.addEventListener('click', scissorsGame);
+
+
+function rockGame (){
+    playerSelection = 'Rock';
+    const computerSelection = getComputerChoice();
+    playRound(playerSelection, computerSelection);
+    playerChoice.textContent = `Player Choose: ${playerSelection}`;
+    computerChoice.textContent = `Computer Choose: ${computerSelection}`;
+
+}
+
+function paperGame(){
+    playerSelection = 'Paper';
+    const computerSelection = getComputerChoice();
+    playRound(playerSelection, computerSelection);
+    playerChoice.textContent = `Player Choose: ${playerSelection}`;
+computerChoice.textContent = `Computer Choose: ${computerSelection}`;
+
+}
+
+function scissorsGame() {
+    playerSelection = 'Scissors';
+    const computerSelection = getComputerChoice();
+    playRound(playerSelection, computerSelection);
+    playerChoice.textContent = `Player Choose: ${playerSelection}`;
+     computerChoice.textContent = `Computer Choose: ${computerSelection}`;
+
+}
+
