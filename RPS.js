@@ -115,3 +115,70 @@ function scissorsGame() {
 
 }
 
+
+// player score, text, and resultsText default value
+playerChoice.textContent = `Player Choose: -- `;
+computerChoice.textContent = `Computer Choose: --`;
+
+playerScoretext.textContent = `Player Score: 0`;
+computerScoretext.textContent = `Computer Score: 0`;
+
+resultsText.textContent = 'Make a choice. Rock, Paper, or Scissors !'
+//end
+
+// Chioce div Element
+choiceDiv.append(playerChoice, computerChoice);
+choiceDiv.className = 'choiceDiv';
+
+//Button div Elements
+const allBtns = document.createElement('div');
+allBtns.append(rockBtn, paperBtn, scissorsBtn);
+allBtns.className = "buttonDiv"
+
+//Divs for scores(score div element)
+scoreDiv.className = 'scoreDiv';
+scoreDiv.append(playerScoretext, computerScoretext)
+
+//func to update score
+
+function updateScore() {
+playerScoretext.textContent = `Player Score: ${playerScore}`;
+computerScoretext.textContent = `Computer Score: ${computerScore}`;
+}
+
+// func to stop game once any player score reaches 5
+function disableBtns (){
+    if (playerScore === 5 ){
+      rockBtn.disabled = true;
+      paperBtn.disabled = true;
+      scissorsBtn.disabled = true;
+
+      setTimeout(() => {
+        resultsText.textContent = 'Player Wins this round';
+      }, 3000);
+      
+    
+    }
+
+    if (computerScore === 5){
+      rockBtn.disabled = true;
+      paperBtn.disabled = true;
+      scissorsBtn.disabled = true;
+
+      setTimeout(() => {
+        resultsText.textContent = 'Computer Wins this round';
+      }, 3000);
+    }
+    
+}
+
+
+//append results elements to results div
+resultsDiv.className = 'resultsDiv';
+resultsDiv.appendChild(resultsText);
+
+
+container.appendChild(resultsDiv);
+container.appendChild(allBtns);
+container.insertBefore(choiceDiv, resultsDiv);
+container.insertBefore(scoreDiv, container.children[0])
