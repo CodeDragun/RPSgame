@@ -3,68 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="RPS.js" defer></script>
+    <link rel="stylesheet" href="RPS.css">
     <title>RPS</title>
 </head>
 <body>
-    
+    <div id="main">
+        <div id="container">
+            
+        </div>
 
-    <script>
-//function creation
-function getComputerChoice(){
-    const compArray =["Rock", "Paper", "Scissors"];
-    const computerHand = (compArray[(Math.floor(Math.random() * compArray.length))]);
-    return computerHand;
-}
-
-function playerHand () {
-    userChoice = prompt("What do you pick ? ");
-    const toFirstCap = userChoice.charAt(0).toUpperCase();
-    const otherWords = userChoice.slice(1).toLowerCase();
-    const mainMain = toFirstCap + otherWords;
-    return mainMain;
-}
- const playerSelection = playerHand();
- const computerSelection = getComputerChoice();
-
-function playRound(playerSelection, computerSelection) {
-    console.log("Player Choose: " + playerSelection);
-    console.log("Computer Choose: " + computerSelection);
-
-    if (computerSelection == "Rock" && playerSelection == "Rock") {
-        return "It's a tie";
-    } else if (computerSelection== 'Rock' && playerSelection == "Paper") {
-        return "You Win! Paper wins Rock";
-    } else if (computerSelection == "Paper" && playerSelection == "Rock" ) {
-        return "You Lose! Paper wins Rock";
-    } else if (computerSelection == "Paper" && playerSelection == "Paper") {
-        return "It's a tie";
-    } else if (computerSelection == "Scissors" && playerSelection == "Paper") {
-        return "You Lose! Scissors beats Paper";
-    } else if (computerSelection == "Paper" && playerSelection == "Scissors") {
-        return "You Win! Scissors beats Paper";
-    } else if (computerSelection == "Scissors" && playerSelection == "Rock") {
-        return "You Win! Rock beats Scissors";
-    } else if (computerSelection == "Rock" && playerSelection == "Scissors") {
-        return "You Lose! Rock beats Scissors"
-    } else if (computerSelection == "Scissors" && playerSelection == "Scissors") {
-        return "It's a tie"
-    }
-    else {
-        return "Check your spelling!"
-    }
-}
-function playGame() {
-    for (i = 0; i < 5; i++){
-        const playerSelection = playerHand();
-        const computerSelection = getComputerChoice();
-
-        const repRound = playRound(playerSelection, computerSelection);
-        console.log(repRound);
-    }
-    console.log("Alright that's it! Refresh to play again.")
-}
- 
- console.log(playRound(playerSelection, computerSelection));
-    </script>
+    </div>
 </body>
 </html>
